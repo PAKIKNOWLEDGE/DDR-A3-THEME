@@ -16,4 +16,8 @@ Edit from Inori's DDR A20 Theme.
 
 • [OutFox](https://projectoutfox.com/)
 
-*Build date: 2023-04-12
+*Build date: 2026-11-10 
+
+#### fork change
+ - added Cmode speed support
+ - added announcers
