@@ -390,6 +390,40 @@ function OptionRowSpeedDisplay()
 	return t;
 end
 
+function OptionRowSpeedMod()
+	local t = {
+		Name = "SpeedMod";
+		LayoutType = "ShowAllInRow";
+		SelectType = "SelectOne";
+		OneChoiceForAllPlayers = true;
+		ExportOnChange = true;
+		Choices = {"XMOD", "CMOD" };
+		LoadSelections = function(self, list, pn)
+			if ReadPrefFromFile("OptionRowSpeedMod") ~= nil then
+				if GetUserPref("OptionRowSpeedMod")=='CMOD' then
+					list[2] = true
+				else
+					list[1] = true
+				end
+			else
+				WritePrefToFile("OptionRowSpeedMod",'XMOD');
+				list[1] = true;
+			end;
+		end;
+		SaveSelections = function(self, list, pn)
+			if list[2] then
+				WritePrefToFile("OptionRowSpeedMod",'CMOD');
+			elseif list[1] then
+				WritePrefToFile("OptionRowSpeedMod",'XMOD');
+			else
+				WritePrefToFile("OptionRowSpeedMod",'XMOD');
+			end;
+		end;
+	};
+	setmetatable( t, t );
+	return t;
+end
+
 function OptionRowModel()
 	local t = {
 		Name = "Model";

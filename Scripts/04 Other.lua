@@ -130,6 +130,15 @@ function ExtraOption2()
 	end
 end
 
+-- Speed row selector: XMOD (x0.25-x8) or CMOD (C25-C800)
+function SpeedModRow()
+	if GetUserPref("OptionRowSpeedMod") == 'CMOD' then
+		return "list,SpeedCMOD"
+	else
+		return "list,Speed"
+	end
+end
+
 function ShockArrows()
 	if GetUserPref("OptionRowShockArrows") == 'true' then
 		return true
